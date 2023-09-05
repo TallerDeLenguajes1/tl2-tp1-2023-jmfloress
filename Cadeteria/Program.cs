@@ -1,12 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-    Cliente c1 = new Cliente("Malena", "Alla", "123", "NN");
-    Cliente c2 = new Cliente("Esteban", "Cerca", "456", "NN");
-    Cliente c3 = new Cliente("Maria", "Aqui", "123", "NN");
-
-    Pedido p1 = new Pedido(1, "mila con papas", c1, "PENDIENTE");
-    Pedido p2 = new Pedido(2, "sushi", c2, "PENDIENTE");
-    Pedido p3 = new Pedido(4, "las empanadas", c3, "PENDIENTE");
+    Pedido p1 = new Pedido(1, "mila con papas", "PENDIENTE", "Malena", "Alla", "123", "NN");
+    Pedido p2 = new Pedido(2, "sushi", "PENDIENTE", "Esteban", "Cerca", "456", "NN");
+    Pedido p3 = new Pedido(4, "las empanadas", "PENDIENTE", "Maria", "Aqui", "123", "NN");
 
     Cadete d1 = new Cadete(1, "Mateo", "alsina 1334", "1321");
     Cadete d2 = new Cadete(3, "Melo", "alsina 1334", "33333");

@@ -5,11 +5,11 @@ public class Pedido
     private Cliente cliente;
     private string estado;
 
-    public Pedido(int nro, string obs, Cliente cliente, string estado)
+    public Pedido(int nro, string obs, string estado, string nombre, string direccion, string telefono, string datosReferenciaDireccion)
     {
         this.nro = nro;
         this.obs = obs;
-        this.cliente = cliente;
+        this.cliente = new Cliente(nombre, direccion, telefono, datosReferenciaDireccion);
         this.estado = estado;
     }
 

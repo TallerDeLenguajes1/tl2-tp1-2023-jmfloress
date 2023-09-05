@@ -12,3 +12,17 @@ C:\uwu\Taller2\tp1\tl2-tp1-2023-jmfloress\Cadeteria\obj\Debug\net7.0\refint\Cade
 C:\uwu\Taller2\tp1\tl2-tp1-2023-jmfloress\Cadeteria\obj\Debug\net7.0\Cadeteria.pdb
 C:\uwu\Taller2\tp1\tl2-tp1-2023-jmfloress\Cadeteria\obj\Debug\net7.0\Cadeteria.genruntimeconfig.cache
 C:\uwu\Taller2\tp1\tl2-tp1-2023-jmfloress\Cadeteria\obj\Debug\net7.0\ref\Cadeteria.dll
+C:\uwu\Taller2\tl2-tp1-2023-jmfloress\cadeteria\bin\Debug\net7.0\Cadeteria.exe
+C:\uwu\Taller2\tl2-tp1-2023-jmfloress\cadeteria\bin\Debug\net7.0\Cadeteria.deps.json
+C:\uwu\Taller2\tl2-tp1-2023-jmfloress\cadeteria\bin\Debug\net7.0\Cadeteria.runtimeconfig.json
+C:\uwu\Taller2\tl2-tp1-2023-jmfloress\cadeteria\bin\Debug\net7.0\Cadeteria.dll
+C:\uwu\Taller2\tl2-tp1-2023-jmfloress\cadeteria\bin\Debug\net7.0\Cadeteria.pdb
+C:\uwu\Taller2\tl2-tp1-2023-jmfloress\cadeteria\obj\Debug\net7.0\Cadeteria.GeneratedMSBuildEditorConfig.editorconfig
+C:\uwu\Taller2\tl2-tp1-2023-jmfloress\cadeteria\obj\Debug\net7.0\Cadeteria.AssemblyInfoInputs.cache
+C:\uwu\Taller2\tl2-tp1-2023-jmfloress\cadeteria\obj\Debug\net7.0\Cadeteria.AssemblyInfo.cs
+C:\uwu\Taller2\tl2-tp1-2023-jmfloress\cadeteria\obj\Debug\net7.0\Cadeteria.csproj.CoreCompileInputs.cache
+C:\uwu\Taller2\tl2-tp1-2023-jmfloress\cadeteria\obj\Debug\net7.0\Cadeteria.dll
+C:\uwu\Taller2\tl2-tp1-2023-jmfloress\cadeteria\obj\Debug\net7.0\refint\Cadeteria.dll
+C:\uwu\Taller2\tl2-tp1-2023-jmfloress\cadeteria\obj\Debug\net7.0\Cadeteria.pdb
+C:\uwu\Taller2\tl2-tp1-2023-jmfloress\cadeteria\obj\Debug\net7.0\Cadeteria.genruntimeconfig.cache
+C:\uwu\Taller2\tl2-tp1-2023-jmfloress\cadeteria\obj\Debug\net7.0\ref\Cadeteria.dll

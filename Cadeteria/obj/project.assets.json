@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\uwu\\Taller2\\tp1\\tl2-tp1-2023-jmfloress\\Cadeteria\\Cadeteria.csproj",
+      "projectUniqueName": "C:\\uwu\\Taller2\\tl2-tp1-2023-jmfloress\\cadeteria\\Cadeteria.csproj",
       "projectName": "Cadeteria",
-      "projectPath": "C:\\uwu\\Taller2\\tp1\\tl2-tp1-2023-jmfloress\\Cadeteria\\Cadeteria.csproj",
+      "projectPath": "C:\\uwu\\Taller2\\tl2-tp1-2023-jmfloress\\cadeteria\\Cadeteria.csproj",
       "packagesPath": "C:\\Users\\jmflo\\.nuget\\packages\\",
-      "outputPath": "C:\\uwu\\Taller2\\tp1\\tl2-tp1-2023-jmfloress\\Cadeteria\\obj\\",
+      "outputPath": "C:\\uwu\\Taller2\\tl2-tp1-2023-jmfloress\\cadeteria\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jmflo\\AppData\\Roaming\\NuGet\\NuGet.Config",
