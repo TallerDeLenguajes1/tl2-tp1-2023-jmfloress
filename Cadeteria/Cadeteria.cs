@@ -17,8 +17,8 @@ public class Cadeteria
 
     public string Nombre { get => nombre; set => nombre = value; }
     public string Telefono { get => telefono; set => telefono = value; }
-    public List<Cadete> ListadoCadete { get => listadoCadete; set => listadoCadete = value; }
-    public List<Pedido> ListadoPedido { get => listadoPedido; set => listadoPedido = value; }
+    public List<Cadete> ListadoCadete { get => listadoCadete; }
+    public List<Pedido> ListadoPedido { get => listadoPedido; }
 
     public void AltaCadete(Cadete cadete1){
         this.ListadoCadete.Add(cadete1);
@@ -60,68 +60,87 @@ public class Cadeteria
             }
         }
     }
-    
-    public void CambiarEstadoPedido(int nro, string estado)
-    {
-        foreach (Pedido item in ListadoPedido)
-        {
-            if (item.Nro == nro)
-            {
-                item.Estado = estado;
-            }
-            
-        }
-    }
-
-    public void AsignarPedido(int nroPedido, int idCadete) // x.x 
-    {
-        if (ListadoCadete.Count !=0 && ListadoPedido.Count != 0)
-        {
-            Pedido auxPedido = ListadoPedido.FirstOrDefault(pedido => pedido.Nro == nroPedido);
-            if (auxPedido != null)
-            {
-                Cadete auxCadete = ListadoCadete.FirstOrDefault(cadete => cadete.Id == idCadete);
-                if (auxCadete != null)
-                {
-                    CambiarEstadoPedido(nroPedido, "ENVIADO");
-                    auxCadete.AgregarPedido(auxPedido);
-                }
-            }    
-        }
-    }
-
-
-
-    public void ReasignarPedido(int nroPedido, int idCadete, int idCadeteNuevo)
-    {
-        if (ListadoCadete.Count !=0 && ListadoPedido.Count != 0)
-        {
-            Pedido auxPedido = ListadoPedido.FirstOrDefault(pedido => pedido.Nro == nroPedido);
-            if (auxPedido != null)
-            {
-                Cadete auxCadete = ListadoCadete.FirstOrDefault(cadete => cadete.Id == idCadete);
-                if (auxCadete != null)
-                {
-                    Cadete auxCadeteNuevo = ListadoCadete.FirstOrDefault(cadete => cadete.Id == idCadeteNuevo);
-                    if (auxCadeteNuevo != null)
-                        {
-                            if(auxCadete.BorrarPedido(nroPedido))
-                            {
-                                auxCadeteNuevo.AgregarPedido(auxPedido);
-                            }
-                        }
-                }
-            }
-        }
-
-    }
-
 
     public void ListarPedido()
     {
         foreach (Pedido item in ListadoPedido)
         {
             System.Console.WriteLine(item);
+        }
+    }
+
+    public void ListarPedidoPorCadete(int idCadete)
+    {
+        foreach (Pedido item in listadoPedido)
+        {
+            if (item.UnCadete.Id == idCadete)
+            {
+                Console.WriteLine(item.ToString());
+            }
+        }
+    }
+
+    public float JornalACobrar(int idCadete){
+        float numPedido =0;
+        foreach (Pedido item in listadoPedido)
+        {
+            if (item.UnCadete.Id == idCadete)
+            {
+                numPedido++;
+            }
+            
+        }
+        return numPedido * 500;
+    }
+
+    public void AsignarCadeteAPedido(int nroPedido, int idCadete)
+    {
+        foreach (Pedido item in listadoPedido)
+        {
+            if(item.Nro == nroPedido)
+            {
+                foreach (Cadete unCadete in listadoCadete)
+                {
+                    if (unCadete.Id == idCadete)
+                    {
+                        item.UnCadete = unCadete;
+                        //item.UnCadete.Id = unCadete.Id;
+                        //item.UnCadete.Nombre = unCadete.Nombre;
+                        //item.UnCadete.Direccion = unCadete.Direccion;
+                        //item.UnCadete.Telefono = unCadete.Direccion;
+                        //item.Estado = "ENVIADO";
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    public void ReasignarCadeteAPedido(int nroPedido, int idCadete, int idCadeteNuevo)
+    {
+        foreach (Pedido item in listadoPedido)
+        {
+            if (item.Nro == nroPedido)
+            {
+                if (item.UnCadete.Id == idCadete)
+                {
+                    foreach (Cadete unCadete in listadoCadete)
+                    {
+                        if (unCadete.Id == idCadeteNuevo)
+                        {
+                            // item.UnCadete = unCadete;
+                            item.UnCadete.Id = unCadete.Id;
+                            item.UnCadete.Nombre = unCadete.Nombre;
+                            item.UnCadete.Direccion = unCadete.Direccion;
+                            item.UnCadete.Telefono = unCadete.Direccion;
+                        }
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("No se realizo la asignacion");
+                }
+            }
         }
     }
 

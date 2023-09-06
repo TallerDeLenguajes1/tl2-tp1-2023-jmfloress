@@ -38,21 +38,21 @@
     unicaCadeteriaXD.ListarPedido();
 
     Console.WriteLine("------Asignar un pedido");
-    unicaCadeteriaXD.AsignarPedido(2,6);
+    unicaCadeteriaXD.AsignarCadeteAPedido(2,6);
 
 
     Console.WriteLine("\n////////Verificar que chopper recibio el pedido///////");
 
-    d3.ListarPedido();
+    unicaCadeteriaXD.ListarPedidoPorCadete(6);
 
     Console.WriteLine("------ReasignarPedido");
-    unicaCadeteriaXD.ReasignarPedido(2,6,3);
+    unicaCadeteriaXD.ReasignarCadeteAPedido(2,6,3);
 
     Console.WriteLine("Pedidos de chopper");
-    d3.ListarPedido();
+    unicaCadeteriaXD.ListarPedidoPorCadete(6);
 
     Console.WriteLine("Pedidos de Melo");
-    d2.ListarPedido();
+    unicaCadeteriaXD.ListarPedidoPorCadete(3);
 
 
 
