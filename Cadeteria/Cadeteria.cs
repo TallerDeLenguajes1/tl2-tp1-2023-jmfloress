@@ -17,32 +17,33 @@ public class Cadeteria
 
     public string Nombre { get => nombre; set => nombre = value; }
     public string Telefono { get => telefono; set => telefono = value; }
-    public List<Cadete> ListadoCadete { get => listadoCadete; }
+    public List<Cadete> ListadoCadete { get => listadoCadete; set => listadoCadete = value; }
     public List<Pedido> ListadoPedido { get => listadoPedido; }
+
+    public override string ToString()
+    {
+        string obj = $"{this.Nombre} - Telefono: {this.Telefono}";
+        return obj;
+    }
 
     public void AltaCadete(Cadete cadete1){
         this.ListadoCadete.Add(cadete1);
     }
 
-    public void BorrarCadete(int id){
-        // ListadoCadete.Remove(ListadoCadete[id]);
+    public bool BorrarCadete(int id){
+        bool ok = false;
         foreach (Cadete item in this.ListadoCadete)
         {
             if (item.Id == id)
             {
                 ListadoCadete.Remove(item);   
-                break;             
+                ok = true;
+                break;           
             }
         }
+        return ok;
     }
 
-    public void ListarCadetes()
-    {
-        foreach (Cadete item in ListadoCadete)
-        {
-            Console.WriteLine(item);
-        }
-    }
 
     public void AltaPedido(Pedido pedido1)
     {
@@ -69,19 +70,23 @@ public class Cadeteria
         }
     }
 
-    public void ListarPedidoPorCadete(int idCadete)
+    public List<Pedido>? ListarPedidoPorCadete(int idCadete)
     {
+        // var lista =  (List<Pedido>)listadoPedido.Where(pedido => pedido.UnCadete.Id == idCadete);
+        List<Pedido> lista = new List<Pedido>();
+        
         foreach (Pedido item in listadoPedido)
         {
             if (item.UnCadete.Id == idCadete)
             {
-                Console.WriteLine(item.ToString());
+                lista.Add(item);
             }
         }
+        return lista;
     }
 
     public float JornalACobrar(int idCadete){
-        float numPedido =0;
+        float numPedido = 0;
         foreach (Pedido item in listadoPedido)
         {
             if (item.UnCadete.Id == idCadete)
@@ -93,8 +98,9 @@ public class Cadeteria
         return numPedido * 500;
     }
 
-    public void AsignarCadeteAPedido(int nroPedido, int idCadete)
+    public bool AsignarCadeteAPedido(int nroPedido, int idCadete)
     {
+        bool ok = false;
         foreach (Pedido item in listadoPedido)
         {
             if(item.Nro == nroPedido)
@@ -104,44 +110,38 @@ public class Cadeteria
                     if (unCadete.Id == idCadete)
                     {
                         item.UnCadete = unCadete;
-                        //item.UnCadete.Id = unCadete.Id;
-                        //item.UnCadete.Nombre = unCadete.Nombre;
-                        //item.UnCadete.Direccion = unCadete.Direccion;
-                        //item.UnCadete.Telefono = unCadete.Direccion;
-                        //item.Estado = "ENVIADO";
+                        ok = true;
+                        item.Estado = EstadoPedido.Enviado.ToString();
                         break;
                     }
                 }
             }
         }
+        return ok;
     }
 
-    public void ReasignarCadeteAPedido(int nroPedido, int idCadete, int idCadeteNuevo)
-    {
-        foreach (Pedido item in listadoPedido)
-        {
-            if (item.Nro == nroPedido)
-            {
-                if (item.UnCadete.Id == idCadete)
-                {
-                    foreach (Cadete unCadete in listadoCadete)
-                    {
-                        if (unCadete.Id == idCadeteNuevo)
-                        {
-                            // item.UnCadete = unCadete;
-                            item.UnCadete.Id = unCadete.Id;
-                            item.UnCadete.Nombre = unCadete.Nombre;
-                            item.UnCadete.Direccion = unCadete.Direccion;
-                            item.UnCadete.Telefono = unCadete.Direccion;
-                        }
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("No se realizo la asignacion");
-                }
-            }
-        }
-    }
+    // public bool ReasignarCadeteAPedido(int nroPedido, int idCadete, int idCadeteNuevo)
+    // {
+    //     bool ok = false;
+    //     foreach (Pedido item in listadoPedido)
+    //     {
+    //         if (item.Nro == nroPedido)
+    //         {
+    //             if (item.UnCadete.Id == idCadete)
+    //             {
+    //                 foreach (Cadete unCadete in listadoCadete)
+    //                 {
+    //                     if (unCadete.Id == idCadeteNuevo)
+    //                     {
+    //                          item.UnCadete = unCadete;
+    //                          ok = true;
+    //                          break;
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     return ok;
+    // }
 
 }

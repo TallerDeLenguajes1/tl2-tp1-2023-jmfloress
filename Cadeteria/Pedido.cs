@@ -1,3 +1,10 @@
+public enum EstadoPedido
+{
+    Pendiente,
+    EnCamino,
+    Enviado,
+    Rechazado
+}
 public class Pedido
 {
     private int nro;
@@ -13,6 +20,7 @@ public class Pedido
         this.cliente = new Cliente(nombre, direccion, telefono, datosReferenciaDireccion);
         this.estado = estado;
         this.UnCadete = new Cadete();
+        unCadete = null;
     }
 
     public int Nro { get => nro; set => nro = value; }
@@ -23,7 +31,10 @@ public class Pedido
 
     public override string ToString()
     {
-        string obj = $"{this.Nro}, {this.Obs}, {this.Cliente.ToString()}, {this.UnCadete.ToString()}";
+        string obj = $"{this.Obs}, {this.Cliente.ToString()}";
+        if(this.UnCadete != null){
+            obj = obj + $", {this.UnCadete.ToString()}";
+        }
         return obj;
     }
 
